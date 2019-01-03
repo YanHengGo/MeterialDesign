@@ -34,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
                     case 3:
                         enterActivity(FouthActivity.class);
                         break;
+                    case 4:
+                        enterActivity(FifthActivity.class);
+                        break;
                 }
             }
         });
