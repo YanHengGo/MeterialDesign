@@ -46,6 +46,6 @@ public class ItemTouchCallback extends ItemTouchHelper.Callback {
     @Override
     public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int position) {
         L.d(String.valueOf(position));
-        itemTouchListener.onSwiped(position);
+        itemTouchListener.onSwiped(viewHolder.getAdapterPosition());
     }
 }
