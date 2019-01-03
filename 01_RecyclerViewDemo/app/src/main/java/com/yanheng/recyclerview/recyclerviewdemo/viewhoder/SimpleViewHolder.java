@@ -20,4 +20,9 @@ public class SimpleViewHolder extends RecyclerView.ViewHolder{
     public void setlayout(String s) {
         textView.setText(s);
     }
+
+    public TextView getTextView() {
+        return textView;
+    }
+
 }
