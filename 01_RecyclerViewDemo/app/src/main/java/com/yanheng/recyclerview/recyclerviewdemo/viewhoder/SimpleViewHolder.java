@@ -11,9 +11,11 @@ public class SimpleViewHolder extends RecyclerView.ViewHolder{
 
 
     private final TextView textView;
+    private final View rootView;
 
     public SimpleViewHolder(@NonNull View itemView) {
         super(itemView);
+        rootView = itemView;
         textView = (TextView) itemView.findViewById(R.id.tv_text);
     }
 
@@ -25,4 +27,7 @@ public class SimpleViewHolder extends RecyclerView.ViewHolder{
         return textView;
     }
 
+    public View getRootView() {
+        return rootView;
+    }
 }

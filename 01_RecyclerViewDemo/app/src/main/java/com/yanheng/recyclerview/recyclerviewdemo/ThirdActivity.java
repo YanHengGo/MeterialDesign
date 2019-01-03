@@ -4,8 +4,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.widget.Toast;
 
 import com.yanheng.recyclerview.recyclerviewdemo.adapter.WaterFallAdapter;
+import com.yanheng.recyclerview.recyclerviewdemo.listener.OnItemCliclistener;
 
 import java.util.ArrayList;
 
@@ -23,6 +25,13 @@ public class ThirdActivity extends AppCompatActivity {
         for(int i=0;i<1000;i++){
             datalist.add("item:"+String.valueOf(i));
         }
-        recyclerView.setAdapter(new WaterFallAdapter(this,datalist));
+        WaterFallAdapter waterFallAdapter = new WaterFallAdapter(this, datalist);
+        waterFallAdapter.setOnitemClickListener(new OnItemCliclistener() {
+            @Override
+            public void onItemClick(int position) {
+                Toast.makeText(ThirdActivity.this,""+position+" clicked",Toast.LENGTH_SHORT).show();
+            }
+        });
+        recyclerView.setAdapter(waterFallAdapter);
     }
 }

@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
                     case 0:
                         enterActivity(FirstActivity.class);
                         break;
-                    case 3:
+                    case 2:
                         enterActivity(ThirdActivity.class);
                         break;
                 }

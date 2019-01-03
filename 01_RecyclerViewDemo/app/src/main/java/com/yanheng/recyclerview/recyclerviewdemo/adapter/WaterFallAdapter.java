@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.yanheng.recyclerview.recyclerviewdemo.R;
+import com.yanheng.recyclerview.recyclerviewdemo.listener.OnItemCliclistener;
 import com.yanheng.recyclerview.recyclerviewdemo.viewhoder.SimpleViewHolder;
 
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ public class WaterFallAdapter extends RecyclerView.Adapter<SimpleViewHolder> {
     private final ArrayList<String> datalist;
 
     ArrayList<Integer> heightList = new ArrayList<>();
+    private OnItemCliclistener cliclistener;
 
     public WaterFallAdapter(Context context, ArrayList<String> datalist) {
         this.context = context;
@@ -46,7 +48,7 @@ public class WaterFallAdapter extends RecyclerView.Adapter<SimpleViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull SimpleViewHolder simpleViewHolder, int position) {
+    public void onBindViewHolder(@NonNull SimpleViewHolder simpleViewHolder, final int position) {
         ViewGroup.LayoutParams layoutParams = simpleViewHolder.getTextView().getLayoutParams();
         layoutParams.height = heightList.get(position);
         simpleViewHolder.getTextView().setLayoutParams(layoutParams);
@@ -56,6 +58,12 @@ public class WaterFallAdapter extends RecyclerView.Adapter<SimpleViewHolder> {
                         100 + ((int) (Math.random() * 155)))
         );
         simpleViewHolder.setlayout(datalist.get(position));
+        ((View) simpleViewHolder.getRootView()).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cliclistener.onItemClick(position);
+            }
+        });
     }
 
     /**
@@ -65,5 +73,9 @@ public class WaterFallAdapter extends RecyclerView.Adapter<SimpleViewHolder> {
     @Override
     public int getItemCount() {
         return datalist.size();
+    }
+
+    public void setOnitemClickListener(OnItemCliclistener onItemCliclistener) {
+        cliclistener = onItemCliclistener;
     }
 }
