@@ -12,6 +12,7 @@ import com.yanheng.recyclerview.recyclerviewdemo.activity.CardViewActivity;
 import com.yanheng.recyclerview.recyclerviewdemo.activity.FifthActivity;
 import com.yanheng.recyclerview.recyclerviewdemo.activity.FirstActivity;
 import com.yanheng.recyclerview.recyclerviewdemo.activity.FouthActivity;
+import com.yanheng.recyclerview.recyclerviewdemo.activity.TabLayoutActivity;
 import com.yanheng.recyclerview.recyclerviewdemo.activity.ThirdActivity;
 
 import java.util.ArrayList;
@@ -46,6 +47,9 @@ public class MainActivity extends AppCompatActivity {
                     case 4:
                         enterActivity(CardViewActivity.class);
                         break;
+                    case 5:
+                        enterActivity(TabLayoutActivity.class);
+                        break;
                 }
             }
         });
@@ -62,6 +66,6 @@ public class MainActivity extends AppCompatActivity {
         datalist.add("RecyclerView多条目效果展示");
         datalist.add("RecyclerView条目拖动,删除效果");
         datalist.add("CardView");
-        datalist.add("添加下划线");
+        datalist.add("TabLayout");
     }
 }
