@@ -14,6 +14,7 @@ import com.yanheng.recyclerview.recyclerviewdemo.activity.FirstActivity;
 import com.yanheng.recyclerview.recyclerviewdemo.activity.FouthActivity;
 import com.yanheng.recyclerview.recyclerviewdemo.activity.TabLayoutActivity;
 import com.yanheng.recyclerview.recyclerviewdemo.activity.ThirdActivity;
+import com.yanheng.recyclerview.recyclerviewdemo.activity.ToolBarActivity;
 
 import java.util.ArrayList;
 
@@ -50,6 +51,9 @@ public class MainActivity extends AppCompatActivity {
                     case 5:
                         enterActivity(TabLayoutActivity.class);
                         break;
+                    case 6:
+                        enterActivity(ToolBarActivity.class);
+                        break;
                 }
             }
         });
@@ -67,5 +71,6 @@ public class MainActivity extends AppCompatActivity {
         datalist.add("RecyclerView条目拖动,删除效果");
         datalist.add("CardView");
         datalist.add("TabLayout");
+        datalist.add("toolbar");
     }
 }

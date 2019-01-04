@@ -21,7 +21,8 @@
         <activity android:name=".activity.FouthActivity" />
         <activity android:name=".activity.FifthActivity" />
         <activity android:name=".activity.CardViewActivity" />
-        <activity android:name=".activity.TabLayoutActivity"></activity>
+        <activity android:name=".activity.TabLayoutActivity" />
+        <activity android:name=".activity.ToolBarActivity"></activity>
     </application>
 
 </manifest>

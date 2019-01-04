@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/item_search"
+        app:showAsAction="always"
+        android:icon="@drawable/abc_ic_search_api_mtrl_alpha"
+        android:title="搜索"></item>
+    <item
+        android:id="@+id/item_notification"
+        app:showAsAction="always"
+        android:icon="@drawable/abc_btn_rating_star_off_mtrl_alpha"
+        android:title="通知"></item>
+    <item
+        android:id="@+id/item_setting"
+        app:showAsAction="withText"
+        android:icon="@drawable/abc_ic_menu_moreoverflow_mtrl_alpha"
+        android:title="设定"></item>
+    <item
+        android:id="@+id/item_about"
+        app:showAsAction="withText"
+        android:title="关于"></item>
+
+</menu>
