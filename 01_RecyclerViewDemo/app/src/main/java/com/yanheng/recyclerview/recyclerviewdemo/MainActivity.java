@@ -28,13 +28,13 @@ public class MainActivity extends AppCompatActivity {
                     case 0:
                         enterActivity(FirstActivity.class);
                         break;
-                    case 2:
+                    case 1:
                         enterActivity(ThirdActivity.class);
                         break;
-                    case 3:
+                    case 2:
                         enterActivity(FouthActivity.class);
                         break;
-                    case 4:
+                    case 3:
                         enterActivity(FifthActivity.class);
                         break;
                 }
@@ -48,11 +48,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void initdata() {
         datalist = new ArrayList<>();
-        datalist.add("单行，多行，单横，多横");
+        datalist.add("RecyclerView单行，多行，单横，多横");
+        datalist.add("RecyclerView瀑布流效果 条目动画");
+        datalist.add("RecyclerView多条目效果展示");
+        datalist.add("RecyclerView条目拖动,删除效果");
+        datalist.add("CardView");
         datalist.add("添加下划线");
-        datalist.add("瀑布流效果 条目动画");
-        datalist.add("多条目效果展示");
-        datalist.add("条目拖动删除效果");
-        datalist.add("下拉刷新上拉加载");
     }
 }

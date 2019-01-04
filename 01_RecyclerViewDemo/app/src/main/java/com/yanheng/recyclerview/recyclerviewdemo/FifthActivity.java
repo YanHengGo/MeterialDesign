@@ -1,7 +1,6 @@
 package com.yanheng.recyclerview.recyclerviewdemo;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
@@ -12,6 +11,7 @@ import android.widget.Toast;
 import com.yanheng.recyclerview.recyclerviewdemo.adapter.ItemAnimatorAdapter;
 import com.yanheng.recyclerview.recyclerviewdemo.listener.ItemTouchListener;
 import com.yanheng.recyclerview.recyclerviewdemo.listener.OnItemCliclistener;
+import com.yanheng.recyclerview.recyclerviewdemo.util.L;
 
 import java.util.ArrayList;
 import java.util.Collections;

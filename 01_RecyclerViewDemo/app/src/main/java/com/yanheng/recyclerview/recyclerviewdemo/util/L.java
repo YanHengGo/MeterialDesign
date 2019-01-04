@@ -1,4 +1,4 @@
-package com.yanheng.recyclerview.recyclerviewdemo;
+package com.yanheng.recyclerview.recyclerviewdemo.util;
 
 import java.util.regex.Pattern;
 import android.util.Log;
