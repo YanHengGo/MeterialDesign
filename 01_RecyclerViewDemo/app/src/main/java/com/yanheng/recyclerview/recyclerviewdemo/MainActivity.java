@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.yanheng.recyclerview.recyclerviewdemo.activity.CardViewActivity;
+import com.yanheng.recyclerview.recyclerviewdemo.activity.DrawerLayoutActivity;
 import com.yanheng.recyclerview.recyclerviewdemo.activity.FifthActivity;
 import com.yanheng.recyclerview.recyclerviewdemo.activity.FirstActivity;
 import com.yanheng.recyclerview.recyclerviewdemo.activity.FouthActivity;
@@ -54,6 +55,9 @@ public class MainActivity extends AppCompatActivity {
                     case 6:
                         enterActivity(ToolBarActivity.class);
                         break;
+                    case 7:
+                        enterActivity(DrawerLayoutActivity.class);
+                        break;
                 }
             }
         });
@@ -69,8 +73,9 @@ public class MainActivity extends AppCompatActivity {
         datalist.add("RecyclerView瀑布流效果 条目动画");
         datalist.add("RecyclerView多条目效果展示");
         datalist.add("RecyclerView条目拖动,删除效果");
-        datalist.add("CardView");
-        datalist.add("TabLayout");
-        datalist.add("toolbar");
+        datalist.add("CardView效果展示");
+        datalist.add("TabLayout效果展示");
+        datalist.add("toolbar效果展示");
+        datalist.add("DrawerLayout效果展示");
     }
 }
