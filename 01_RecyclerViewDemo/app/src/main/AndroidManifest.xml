@@ -23,7 +23,8 @@
         <activity android:name=".activity.CardViewActivity" />
         <activity android:name=".activity.TabLayoutActivity" />
         <activity android:name=".activity.ToolBarActivity" />
-        <activity android:name=".activity.DrawerLayoutActivity"></activity>
+        <activity android:name=".activity.DrawerLayoutActivity" />
+        <activity android:name=".activity.TextInputActivity"></activity>
     </application>
 
 </manifest>

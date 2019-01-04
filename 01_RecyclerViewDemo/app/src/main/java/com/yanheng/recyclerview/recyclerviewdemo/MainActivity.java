@@ -14,6 +14,7 @@ import com.yanheng.recyclerview.recyclerviewdemo.activity.FifthActivity;
 import com.yanheng.recyclerview.recyclerviewdemo.activity.FirstActivity;
 import com.yanheng.recyclerview.recyclerviewdemo.activity.FouthActivity;
 import com.yanheng.recyclerview.recyclerviewdemo.activity.TabLayoutActivity;
+import com.yanheng.recyclerview.recyclerviewdemo.activity.TextInputActivity;
 import com.yanheng.recyclerview.recyclerviewdemo.activity.ThirdActivity;
 import com.yanheng.recyclerview.recyclerviewdemo.activity.ToolBarActivity;
 
@@ -58,6 +59,9 @@ public class MainActivity extends AppCompatActivity {
                     case 7:
                         enterActivity(DrawerLayoutActivity.class);
                         break;
+                    case 8:
+                        enterActivity(TextInputActivity.class);
+                        break;
                 }
             }
         });
@@ -77,5 +81,6 @@ public class MainActivity extends AppCompatActivity {
         datalist.add("TabLayout效果展示");
         datalist.add("toolbar效果展示");
         datalist.add("DrawerLayout效果展示");
+        datalist.add("TextInput效果展示");
     }
 }
