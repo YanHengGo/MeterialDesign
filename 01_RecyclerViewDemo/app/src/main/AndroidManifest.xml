@@ -24,7 +24,8 @@
         <activity android:name=".activity.TabLayoutActivity" />
         <activity android:name=".activity.ToolBarActivity" />
         <activity android:name=".activity.DrawerLayoutActivity" />
-        <activity android:name=".activity.TextInputActivity"></activity>
+        <activity android:name=".activity.TextInputActivity" />
+        <activity android:name=".activity.CoordinatorLayoutActivity"></activity>
     </application>
 
 </manifest>

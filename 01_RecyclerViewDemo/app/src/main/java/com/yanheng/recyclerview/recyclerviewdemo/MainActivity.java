@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.yanheng.recyclerview.recyclerviewdemo.activity.CardViewActivity;
+import com.yanheng.recyclerview.recyclerviewdemo.activity.CoordinatorLayoutActivity;
 import com.yanheng.recyclerview.recyclerviewdemo.activity.DrawerLayoutActivity;
 import com.yanheng.recyclerview.recyclerviewdemo.activity.FifthActivity;
 import com.yanheng.recyclerview.recyclerviewdemo.activity.FirstActivity;
@@ -62,6 +63,9 @@ public class MainActivity extends AppCompatActivity {
                     case 8:
                         enterActivity(TextInputActivity.class);
                         break;
+                    case 9:
+                        enterActivity(CoordinatorLayoutActivity.class);
+                        break;
                 }
             }
         });
@@ -81,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
         datalist.add("TabLayout效果展示");
         datalist.add("toolbar效果展示");
         datalist.add("DrawerLayout效果展示");
-        datalist.add("TextInput效果展示");
+        datalist.add("TextInputLayout效果展示");
+        datalist.add("CoordinatorLayout效果展示");
     }
 }
