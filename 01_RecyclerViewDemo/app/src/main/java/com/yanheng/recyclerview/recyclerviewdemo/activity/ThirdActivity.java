@@ -1,4 +1,4 @@
-package com.yanheng.recyclerview.recyclerviewdemo;
+package com.yanheng.recyclerview.recyclerviewdemo.activity;
 
 import android.graphics.Color;
 import android.os.Handler;
@@ -10,6 +10,7 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 import android.widget.Toast;
 
+import com.yanheng.recyclerview.recyclerviewdemo.R;
 import com.yanheng.recyclerview.recyclerviewdemo.adapter.WaterFallAdapter;
 import com.yanheng.recyclerview.recyclerviewdemo.listener.OnItemCliclistener;
 

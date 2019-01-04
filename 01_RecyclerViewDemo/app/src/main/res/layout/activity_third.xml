@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ThirdActivity">
+    tools:context=".activity.ThirdActivity">
     <Button
         android:text="添加条目"
         android:onClick="addItem"

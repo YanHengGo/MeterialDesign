@@ -1,4 +1,4 @@
-package com.yanheng.recyclerview.recyclerviewdemo;
+package com.yanheng.recyclerview.recyclerviewdemo.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.yanheng.recyclerview.recyclerviewdemo.R;
 import com.yanheng.recyclerview.recyclerviewdemo.adapter.SimpleAdapter;
 
 import java.util.ArrayList;

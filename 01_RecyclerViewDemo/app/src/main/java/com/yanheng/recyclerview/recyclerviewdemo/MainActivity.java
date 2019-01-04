@@ -8,6 +8,12 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.yanheng.recyclerview.recyclerviewdemo.activity.CardViewActivity;
+import com.yanheng.recyclerview.recyclerviewdemo.activity.FifthActivity;
+import com.yanheng.recyclerview.recyclerviewdemo.activity.FirstActivity;
+import com.yanheng.recyclerview.recyclerviewdemo.activity.FouthActivity;
+import com.yanheng.recyclerview.recyclerviewdemo.activity.ThirdActivity;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {

@@ -1,4 +1,4 @@
-package com.yanheng.recyclerview.recyclerviewdemo;
+package com.yanheng.recyclerview.recyclerviewdemo.util;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;

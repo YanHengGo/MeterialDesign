@@ -1,7 +1,9 @@
-package com.yanheng.recyclerview.recyclerviewdemo;
+package com.yanheng.recyclerview.recyclerviewdemo.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.yanheng.recyclerview.recyclerviewdemo.R;
 
 public class CardViewActivity extends AppCompatActivity {
 

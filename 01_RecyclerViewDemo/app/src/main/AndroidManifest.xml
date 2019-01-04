@@ -16,11 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FirstActivity" />
-        <activity android:name=".ThirdActivity" />
-        <activity android:name=".FouthActivity" />
-        <activity android:name=".FifthActivity" />
-        <activity android:name=".CardViewActivity"></activity>
+        <activity android:name=".activity.FirstActivity" />
+        <activity android:name=".activity.ThirdActivity" />
+        <activity android:name=".activity.FouthActivity" />
+        <activity android:name=".activity.FifthActivity" />
+        <activity android:name=".activity.CardViewActivity"></activity>
     </application>
 
 </manifest>

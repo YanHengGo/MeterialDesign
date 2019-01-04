@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.yanheng.recyclerview.recyclerviewdemo.FirstActivity;
 import com.yanheng.recyclerview.recyclerviewdemo.R;
 import com.yanheng.recyclerview.recyclerviewdemo.viewhoder.SimpleViewHolder;
 

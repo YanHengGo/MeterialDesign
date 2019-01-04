@@ -1,4 +1,4 @@
-package com.yanheng.recyclerview.recyclerviewdemo;
+package com.yanheng.recyclerview.recyclerviewdemo.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +8,8 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.View;
 import android.widget.Toast;
 
+import com.yanheng.recyclerview.recyclerviewdemo.util.ItemTouchCallback;
+import com.yanheng.recyclerview.recyclerviewdemo.R;
 import com.yanheng.recyclerview.recyclerviewdemo.adapter.ItemAnimatorAdapter;
 import com.yanheng.recyclerview.recyclerviewdemo.listener.ItemTouchListener;
 import com.yanheng.recyclerview.recyclerviewdemo.listener.OnItemCliclistener;
