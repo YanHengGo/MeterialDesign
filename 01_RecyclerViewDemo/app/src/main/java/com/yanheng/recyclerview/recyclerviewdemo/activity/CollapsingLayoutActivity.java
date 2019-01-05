@@ -29,6 +29,8 @@ public class CollapsingLayoutActivity extends AppCompatActivity {
         collapsingToolbarLayout.setCollapsedTitleTextColor(Color.GREEN);
         collapsingToolbarLayout.setExpandedTitleColor(Color.RED);
 
+        scrollView = ((ScrollView) findViewById(R.id.sv_content));
+        ViewCompat.setNestedScrollingEnabled(scrollView, true);
 
     }
 }
