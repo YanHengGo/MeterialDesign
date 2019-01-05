@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.yanheng.recyclerview.recyclerviewdemo.activity.CardViewActivity;
+import com.yanheng.recyclerview.recyclerviewdemo.activity.CollapsingLayoutActivity;
 import com.yanheng.recyclerview.recyclerviewdemo.activity.CoordinatorLayoutActivity;
 import com.yanheng.recyclerview.recyclerviewdemo.activity.DrawerLayoutActivity;
 import com.yanheng.recyclerview.recyclerviewdemo.activity.FifthActivity;
@@ -70,6 +71,9 @@ public class MainActivity extends AppCompatActivity {
                     case 10:
                         enterActivity(SnackBarActivity.class);
                         break;
+                    case 11:
+                        enterActivity(CollapsingLayoutActivity.class);
+                        break;
                 }
             }
         });
@@ -92,5 +96,6 @@ public class MainActivity extends AppCompatActivity {
         datalist.add("TextInputLayout效果展示");
         datalist.add("CoordinatorLayout效果展示");
         datalist.add("SnackBar效果展示");
+        datalist.add("CollapsingLayout效果展示");
     }
 }

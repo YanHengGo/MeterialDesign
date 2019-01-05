@@ -26,7 +26,8 @@
         <activity android:name=".activity.DrawerLayoutActivity" />
         <activity android:name=".activity.TextInputActivity" />
         <activity android:name=".activity.CoordinatorLayoutActivity" />
-        <activity android:name=".activity.SnackBarActivity"></activity>
+        <activity android:name=".activity.SnackBarActivity" />
+        <activity android:name=".activity.CollapsingLayoutActivity"></activity>
     </application>
 
 </manifest>
