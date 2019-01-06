@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     ArrayList<View> viewlist = new ArrayList<>();
     private Disposable disposable;
+    private boolean isTouching = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +32,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         viewPager = ((ViewPager) findViewById(R.id.viewpager));
         initView();
-        viewPager.setAdapter(new MypagerAdapter(viewlist));
+        viewPager.setAdapter(new MypagerAdapter(viewlist, new MypagerAdapter.OnClickViewListener() {
+            @Override
+            public void isTouchDown() {
+                isTouching = true;
+            }
+
+            @Override
+            public void isTouchUp() {
+                isTouching = false;
+            }
+        }));
+
         setTimer();
     }
 
@@ -61,13 +73,16 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onNext(Long aLong) {
-                        L.d();
+                        L.d(""+isTouching);
                         int currentItem = viewPager.getCurrentItem();
                         currentItem++;
                         if(currentItem==viewlist.size()){
                             currentItem=0;
                         }
-                        viewPager.setCurrentItem(currentItem);
+                        if(!isTouching){
+                            L.d();
+                            viewPager.setCurrentItem(currentItem);
+                        }
                     }
 
                     @Override
@@ -86,6 +101,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         L.d();
+        cancelTimer();
+    }
+    private void cancelTimer(){
         if(disposable!=null && !disposable.isDisposed()){
             L.d();
             disposable.dispose();

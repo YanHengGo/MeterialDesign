@@ -2,6 +2,7 @@ package com.yanheng.fragmentdemo.adapter;
 
 import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -12,9 +13,16 @@ import java.util.ArrayList;
 public class MypagerAdapter extends PagerAdapter {
 
     private final ArrayList<View> viewlist;
+    private final OnClickViewListener onClickViewListener;
 
-    public MypagerAdapter(ArrayList<View> viewlist){
+    public interface OnClickViewListener{
+        void isTouchDown();
+        void isTouchUp();
+    }
+
+    public MypagerAdapter(ArrayList<View> viewlist , OnClickViewListener listener){
         this.viewlist = viewlist;
+        onClickViewListener = listener;
     }
     @Override
     public int getCount() {
@@ -27,6 +35,27 @@ public class MypagerAdapter extends PagerAdapter {
         L.d("load -->"+position);
         View view = viewlist.get(position);
         container.addView(view);
+        view.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                L.d();
+                switch (event.getAction()){
+                    case MotionEvent.ACTION_DOWN:
+                        L.d();
+                        onClickViewListener.isTouchDown();
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        L.d();
+                        onClickViewListener.isTouchUp();
+                        break;
+                    case MotionEvent.ACTION_CANCEL:
+                        L.d();
+//                        onClickViewListener.isTouchUp();
+                        break;
+                }
+                return true;
+            }
+        });
         return view;
     }
 
