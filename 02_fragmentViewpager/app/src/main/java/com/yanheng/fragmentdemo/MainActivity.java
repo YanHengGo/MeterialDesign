@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<News> dataList = new ArrayList<>();
     private Disposable disposable;
     private boolean isTouching = false;
+    private int currentPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,15 +45,57 @@ public class MainActivity extends AppCompatActivity {
                 isTouching = false;
             }
         }));
+        viewPager.setCurrentItem(1);
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            /**
+             *
+             * @param position   索引值
+             * @param positionoffset   偏移量 0----1
+             * @param positionOffsetPixels  偏移像素值
+             */
+            @Override
+            public void onPageScrolled(int position, float positionoffset, int positionOffsetPixels) {
+
+            }
+
+            /**
+             *
+             * @param position
+             */
+            @Override
+            public void onPageSelected(int position) {
+                currentPosition= position;
+                L.d(""+position);
+                if(position == dataList.size() -1){
+                    currentPosition = 1;
+                }else if (position == 0){
+                    currentPosition = dataList.size() -2 ;
+                }
+            }
+
+            /**
+             * @param state
+             * idle 静止，settling 惯性过程，dragging 拖动过程
+             */
+            @Override
+            public void onPageScrollStateChanged(int state) {
+                if(state == ViewPager.SCROLL_STATE_IDLE){
+                    viewPager.setCurrentItem(currentPosition,false);
+                }
+
+            }
+        });
 
         setTimer();
     }
 
     private void initData() {
+        dataList.add(new News("第四张图片",R.mipmap.ad));
         dataList.add(new News("第一张图片",R.mipmap.aa));
         dataList.add(new News("第二张图片",R.mipmap.ab));
         dataList.add(new News("第三张图片",R.mipmap.ac));
         dataList.add(new News("第四张图片",R.mipmap.ad));
+        dataList.add(new News("第一张图片",R.mipmap.aa));
     }
 
     private void setTimer(){
@@ -70,9 +113,9 @@ public class MainActivity extends AppCompatActivity {
                         L.d(""+isTouching);
                         int currentItem = viewPager.getCurrentItem();
                         currentItem++;
-                        if(currentItem==dataList.size()){
-                            currentItem=0;
-                        }
+//                        if(currentItem==dataList.size()-1){
+//                            currentItem=1;
+//                        }
                         if(!isTouching){
                             L.d();
                             viewPager.setCurrentItem(currentItem);
