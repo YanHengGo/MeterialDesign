@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.yanheng.staticfragment.R;
+import com.yanheng.staticfragment.util.L;
 
 import java.util.ArrayList;
 
@@ -60,48 +61,9 @@ public class LeftFragment extends Fragment {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_left, container, false);
-        listView = (ListView) view.findViewById(R.id.left_listview);
-        return view;
-    }
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        initData();
-        listView.setAdapter(new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,list));
-
-    }
-
-    private void initData() {
-        list = new ArrayList<>();
-        for(int i=0;i<20;i++){
-            list.add("fragment no. ="+i);
-        }
-    }
-
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
-
-    @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+        L.d();
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
         } else {
@@ -111,9 +73,89 @@ public class LeftFragment extends Fragment {
     }
 
     @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        L.d();
+        if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);
+        }
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        L.d();
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.fragment_left, container, false);
+        listView = (ListView) view.findViewById(R.id.left_listview);
+        return view;
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        L.d();
+        initData();
+        listView.setAdapter(new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,list));
+
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        L.d();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        L.d();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        L.d();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        L.d();
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        L.d();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        L.d();
+    }
+
+    @Override
     public void onDetach() {
         super.onDetach();
+        L.d();
         mListener = null;
+    }
+    private void initData() {
+        list = new ArrayList<>();
+        for(int i=0;i<20;i++){
+            list.add("fragment no. ="+i);
+        }
+    }
+
+    // TODO: Rename method, update argument and hook method into UI event
+
+    public void onButtonPressed(Uri uri) {
+        if (mListener != null) {
+            mListener.onFragmentInteraction(uri);
+        }
     }
 
     /**
