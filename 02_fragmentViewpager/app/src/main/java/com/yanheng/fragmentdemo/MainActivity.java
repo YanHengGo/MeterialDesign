@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.yanheng.fragmentdemo.adapter.MypagerAdapter;
 import com.yanheng.fragmentdemo.bean.News;
@@ -27,13 +29,16 @@ public class MainActivity extends AppCompatActivity {
     private Disposable disposable;
     private boolean isTouching = false;
     private int currentPosition;
+    private LinearLayout dots;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        dots = ((LinearLayout) findViewById(R.id.dots));
         viewPager = ((ViewPager) findViewById(R.id.viewpager));
         initData();
+        initDots();
         viewPager.setAdapter(new MypagerAdapter(this,dataList, new MypagerAdapter.OnClickViewListener() {
             @Override
             public void isTouchDown() {
@@ -71,6 +76,15 @@ public class MainActivity extends AppCompatActivity {
                 }else if (position == 0){
                     currentPosition = dataList.size() -2 ;
                 }
+                int dotIndex = currentPosition -1;
+                for(int i= 0 ; i< 4 ;i++){
+                    ImageView imageView = (ImageView) dots.getChildAt(i);
+                    if(i==dotIndex){
+                        imageView.setImageResource(R.mipmap.dot_on);
+                    }else{
+                        imageView.setImageResource(R.mipmap.dot_off);
+                    }
+                }
             }
 
             /**
@@ -87,6 +101,20 @@ public class MainActivity extends AppCompatActivity {
         });
 
         setTimer();
+    }
+
+    private void initDots() {
+        for(int i=0 ;i<dataList.size()-2;i++){
+            ImageView imageView = new ImageView(this);
+            if(i==0){
+                imageView.setImageResource(R.mipmap.dot_on);
+            }else{
+                imageView.setImageResource(R.mipmap.dot_off);
+            }
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(60,60);
+            params.setMargins(10,10,10,10);
+            dots.addView(imageView,params);
+        }
     }
 
     private void initData() {
