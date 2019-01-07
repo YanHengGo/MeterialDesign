@@ -39,6 +39,7 @@ public class LeftFragment extends Fragment {
     private ListView listView;
 
     public LeftFragment() {
+        L.d();
         // Required empty public constructor
     }
 
@@ -52,6 +53,7 @@ public class LeftFragment extends Fragment {
      */
     // TODO: Rename and change types and number of parameters
     public static LeftFragment newInstance(String param1, String param2) {
+        L.d();
         LeftFragment fragment = new LeftFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);

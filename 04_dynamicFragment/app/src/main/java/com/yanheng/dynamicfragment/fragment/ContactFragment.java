@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.yanheng.dynamicfragment.R;
+import com.yanheng.dynamicfragment.util.L;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -32,6 +33,7 @@ public class ContactFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
 
     public ContactFragment() {
+        L.d();
         // Required empty public constructor
     }
 
@@ -45,6 +47,7 @@ public class ContactFragment extends Fragment {
      */
     // TODO: Rename and change types and number of parameters
     public static ContactFragment newInstance(String param1, String param2) {
+        L.d();
         ContactFragment fragment = new ContactFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
@@ -56,6 +59,7 @@ public class ContactFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        L.d();
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -65,6 +69,7 @@ public class ContactFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        L.d();
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_contact, container, false);
         TextView textView = (TextView) view.findViewById(R.id.textview);
@@ -82,6 +87,7 @@ public class ContactFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+        L.d();
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
         } else {
@@ -90,12 +96,49 @@ public class ContactFragment extends Fragment {
         }
     }
 
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        L.d();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        L.d();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        L.d();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        L.d();
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        L.d();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        L.d();
+    }
+
     @Override
     public void onDetach() {
         super.onDetach();
+        L.d();
         mListener = null;
     }
-
     /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated

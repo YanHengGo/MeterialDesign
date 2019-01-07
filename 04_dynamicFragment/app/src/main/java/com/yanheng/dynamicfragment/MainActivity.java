@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.yanheng.dynamicfragment.fragment.ContactFragment;
 import com.yanheng.dynamicfragment.fragment.DynamicFragment;
 import com.yanheng.dynamicfragment.fragment.MessageFragment;
+import com.yanheng.dynamicfragment.util.L;
 
 public class MainActivity extends FragmentActivity
         implements MessageFragment.OnFragmentInteractionListener,
@@ -26,10 +27,14 @@ public class MainActivity extends FragmentActivity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        L.d();
         super.onCreate(savedInstanceState);
+        L.d();
         setContentView(R.layout.activity_main);
+        L.d();
         initView();
         changeFragment(new MessageFragment(),"我是消息界面");
+        L.d();
     }
 
     private void initView() {
@@ -62,6 +67,47 @@ public class MainActivity extends FragmentActivity
         FragmentTransaction fragmentTransaction = supportFragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.fragment,fragment , tag);
         fragmentTransaction.commit();
+    }
+    @Override
+    protected void onRestart() {
+        L.d();
+        super.onRestart();
+        L.d();
+    }
+
+    @Override
+    protected void onStart() {
+        L.d();
+        super.onStart();
+        L.d();
+    }
+
+    @Override
+    protected void onResume() {
+        L.d();
+        super.onResume();
+        L.d();
+    }
+
+    @Override
+    protected void onPause() {
+        L.d();
+        super.onPause();
+        L.d();
+    }
+
+    @Override
+    protected void onStop() {
+        L.d();
+        super.onStop();
+        L.d();
+    }
+
+    @Override
+    protected void onDestroy() {
+        L.d();
+        super.onDestroy();
+        L.d();
     }
 
     @Override
