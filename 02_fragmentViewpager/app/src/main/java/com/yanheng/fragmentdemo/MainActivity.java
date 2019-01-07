@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 
 import com.yanheng.fragmentdemo.adapter.MypagerAdapter;
+import com.yanheng.fragmentdemo.bean.News;
 import com.yanheng.fragmentdemo.util.L;
 
 import java.util.ArrayList;
@@ -22,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ViewPager viewPager;
 
-    ArrayList<View> viewlist = new ArrayList<>();
+    ArrayList<News> dataList = new ArrayList<>();
     private Disposable disposable;
     private boolean isTouching = false;
 
@@ -31,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         viewPager = ((ViewPager) findViewById(R.id.viewpager));
-        initView();
-        viewPager.setAdapter(new MypagerAdapter(viewlist, new MypagerAdapter.OnClickViewListener() {
+        initData();
+        viewPager.setAdapter(new MypagerAdapter(this,dataList, new MypagerAdapter.OnClickViewListener() {
             @Override
             public void isTouchDown() {
                 isTouching = true;
@@ -47,18 +48,11 @@ public class MainActivity extends AppCompatActivity {
         setTimer();
     }
 
-    private void initView() {
-        addViewWithId(R.layout.viewpager1);
-        addViewWithId(R.layout.viewpager2);
-        addViewWithId(R.layout.viewpager3);
-        addViewWithId(R.layout.viewpager4);
-    }
-
-
-
-    private void addViewWithId(int viewpager) {
-        View view = View.inflate(this, viewpager, null);
-        viewlist.add(view);
+    private void initData() {
+        dataList.add(new News("第一张图片",R.mipmap.aa));
+        dataList.add(new News("第二张图片",R.mipmap.ab));
+        dataList.add(new News("第三张图片",R.mipmap.ac));
+        dataList.add(new News("第四张图片",R.mipmap.ad));
     }
 
     private void setTimer(){
@@ -76,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                         L.d(""+isTouching);
                         int currentItem = viewPager.getCurrentItem();
                         currentItem++;
-                        if(currentItem==viewlist.size()){
+                        if(currentItem==dataList.size()){
                             currentItem=0;
                         }
                         if(!isTouching){
