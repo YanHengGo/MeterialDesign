@@ -5,12 +5,17 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.ListFragment;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.yanheng.staticfragment.MainActivity;
 import com.yanheng.staticfragment.R;
 import com.yanheng.staticfragment.util.L;
 
@@ -100,8 +105,19 @@ public class LeftFragment extends Fragment {
         L.d();
         initData();
         listView.setAdapter(new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,list));
-
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                L.d("position="+position + "  id="+id);
+                position = position % 4;
+                MainActivity activity = ((MainActivity) getActivity());
+                FragmentManager supportFragmentManager = activity.getSupportFragmentManager();
+                RightFragment rightFragment = (RightFragment) supportFragmentManager.findFragmentById(R.id.right_fragment);
+                rightFragment.setCurrentImager(resIds[position]);
+            }
+        });
     }
+    int [] resIds = {R.mipmap.aa,R.mipmap.ab,R.mipmap.ac,R.mipmap.ad};
 
     @Override
     public void onStart() {
