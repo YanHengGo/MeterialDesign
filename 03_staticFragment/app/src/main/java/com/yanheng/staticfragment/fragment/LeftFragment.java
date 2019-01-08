@@ -42,6 +42,7 @@ public class LeftFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
     private ArrayList<String> list;
     private ListView listView;
+    private OnViewChangeListener onViewChangeListener;
 
     public LeftFragment() {
         L.d();
@@ -109,11 +110,13 @@ public class LeftFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 L.d("position="+position + "  id="+id);
-                position = position % 4;
-                MainActivity activity = ((MainActivity) getActivity());
-                FragmentManager supportFragmentManager = activity.getSupportFragmentManager();
-                RightFragment rightFragment = (RightFragment) supportFragmentManager.findFragmentById(R.id.right_fragment);
-                rightFragment.setCurrentImager(resIds[position]);
+                position = position%resIds.length;
+//                position = position % 4;
+//                MainActivity activity = ((MainActivity) getActivity());
+//                FragmentManager supportFragmentManager = activity.getSupportFragmentManager();
+//                RightFragment rightFragment = (RightFragment) supportFragmentManager.findFragmentById(R.id.right_fragment);
+//                rightFragment.setCurrentImager(resIds[position]);
+                onViewChangeListener.setNextView(resIds[position]);
             }
         });
     }
@@ -166,6 +169,12 @@ public class LeftFragment extends Fragment {
         for(int i=0;i<20;i++){
             list.add("fragment no. ="+i);
         }
+    }
+    public void setOnViewChangeListener(OnViewChangeListener onViewChangeListener){
+        this.onViewChangeListener = onViewChangeListener;
+    }
+    public interface OnViewChangeListener{
+        void setNextView(int resId);
     }
 
     // TODO: Rename method, update argument and hook method into UI event

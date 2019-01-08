@@ -3,12 +3,17 @@ package com.yanheng.staticfragment.fragment;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.ListFragment;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.yanheng.staticfragment.MainActivity;
 import com.yanheng.staticfragment.R;
 
 /**
@@ -89,6 +94,20 @@ public class RightFragment extends Fragment {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
         }
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        MainActivity activity = (MainActivity) getActivity();
+        FragmentManager supportFragmentManager = activity.getSupportFragmentManager();
+        LeftFragment leftFragment = (LeftFragment) supportFragmentManager.findFragmentById(R.id.left_fragment);
+        leftFragment.setOnViewChangeListener(new LeftFragment.OnViewChangeListener() {
+            @Override
+            public void setNextView(int resId) {
+                imageView.setImageResource(resId);
+            }
+        });
     }
 
     @Override
